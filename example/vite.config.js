@@ -5,7 +5,7 @@ import ReactPlugin from 'vite-preset-react';
 export default defineConfig({
   plugins: [
     ReactPlugin({
-      injectReact: false,
+      injectReact: true,
     }),
   ],
 });
