@@ -2,7 +2,7 @@ import React, { forwardRef, ReactNode } from 'react';
 import StyledButton from './Button.styled';
 
 export type ButtonSize = 's' | 'm' | 'l';
-export type ButtonColor = 'primary' | 'success' | 'danger' | 'warning';
+export type ButtonColor = 'primary' | 'success' | 'danger' | 'warning' | 'secondary';
 
 export interface ButtonProps {
   size?: ButtonSize;
@@ -11,8 +11,8 @@ export interface ButtonProps {
 }
 const defaultProps: Partial<ButtonProps> = {
   size: 'm',
-  color: 'danger',
-  children: 'Darko',
+  color: 'primary',
+  children: 'Button',
 };
 
 const useDefaultProps = <T, U extends Partial<T> = {}>(
