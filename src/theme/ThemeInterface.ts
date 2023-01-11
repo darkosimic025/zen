@@ -12,6 +12,11 @@ declare module 'styled-components' {
         danger: string;
         warning: string;
         success: string;
+        primaryHover: string;
+        secondaryHover: string;
+        dangerHover: string;
+        warningHover: string;
+        successHover: string;
       };
       buttonSizeWidth: {
         s: string;
@@ -23,25 +28,25 @@ declare module 'styled-components' {
         m: string;
         l: string;
       };
-    },
+    };
     loader: {
-        loaderColors: {
-          primary: string;
-          secondary: string;
-          danger: string;
-          warning: string;
-          success: string;
-        };
-        loaderSizeWidth: {
-          s: string;
-          m: string;
-          l: string;
-        };
-        loaderSizeHeight: {
-          s: string;
-          m: string;
-          l: string;
-        };
+      loaderColors: {
+        primary: string;
+        secondary: string;
+        danger: string;
+        warning: string;
+        success: string;
       };
+      loaderSizeWidth: {
+        s: string;
+        m: string;
+        l: string;
+      };
+      loaderSizeHeight: {
+        s: string;
+        m: string;
+        l: string;
+      };
+    };
   }
 }

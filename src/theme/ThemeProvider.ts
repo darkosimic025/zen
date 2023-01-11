@@ -7,18 +7,23 @@ const theme: DefaultTheme = {
   button: {
     buttonColors: {
       primary: '#63B3ED',
-      secondary: 'RGBA(0, 0, 0, 0.16)',
+      secondary: '#d1d1d1',
       danger: '#F56565',
       warning: '#F6AD55',
       success: '#68D391',
+      primaryHover: '#369ee7',
+      secondaryHover: '#c2c2c2',
+      dangerHover: '#e10e0e',
+      warningHover: '#f28b0d',
+      successHover: '#38c26d',
     },
     buttonSizeWidth: {
-      s: '55px',
-      m: '70px',
-      l: '85px',
+      s: '70px',
+      m: '80px',
+      l: '100px',
     },
     buttonSizeHeight: {
-      s: '24px',
+      s: '28px',
       m: '32px',
       l: '40px',
     },

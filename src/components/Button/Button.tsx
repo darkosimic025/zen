@@ -49,7 +49,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       color={buttonIsDisabled({ disabled, color })}
       size={size}
     >
-      {loading && <Loader />}
+      {loading && <Loader size={size}/>}
       {children}
     </StyledButton>
   );

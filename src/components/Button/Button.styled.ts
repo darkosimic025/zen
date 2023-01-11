@@ -38,9 +38,26 @@ const StyledButton = styled.button<StyledButtonProps>`
         return theme.button.buttonColors.secondary;
     }
   }};
+  &:hover {
+    background: ${({ color, theme }) => {
+      switch (color) {
+        case 'primary':
+          return theme.button.buttonColors.primaryHover;
+        case 'success':
+          return theme.button.buttonColors.successHover;
+        case 'danger':
+          return theme.button.buttonColors.dangerHover;
+        case 'warning':
+          return theme.button.buttonColors.warningHover;
+        case 'secondary':
+          return theme.button.buttonColors.secondaryHover;
+      }
+    }
+  }
+  };
   border: none;
   outline: none;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
   white-space: nowrap;
   -webkit-user-select: none;
