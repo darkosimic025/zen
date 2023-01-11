@@ -6,17 +6,51 @@ export type LoaderSVGProps = Pick<LoaderProps, 'color'>;
 
 export const LoaderContainer = styled.div<LoaderContainerProps>`
   position: relative;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
+  width: ${({ size, theme }) => {
+    switch (size) {
+      case 's':
+        return theme.loader.loaderSizeWidth.s;
+      case 'm':
+        return theme.loader.loaderSizeWidth.m;
+      case 'l':
+        return theme.loader.loaderSizeWidth.l;
+    }
+  }};
+  height: ${({ size, theme }) => {
+    switch (size) {
+      case 's':
+        return theme.loader.loaderSizeHeight.s;
+      case 'm':
+        return theme.loader.loaderSizeHeight.m;
+      case 'l':
+        return theme.loader.loaderSizeHeight.l;
+    }
+  }};
 `;
 export const LoaderSVG = styled.svg<LoaderSVGProps>`
   animation: rotate 1s linear infinite;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -50%;
-  margin-left: -50%;
-  stroke: currentColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
+  stroke: ${({ color, theme }) => {
+    switch (color) {
+      case 'primary':
+        return theme.loader.loaderColors.primary;
+      case 'success':
+        return theme.loader.loaderColors.success;
+      case 'danger':
+        return theme.loader.loaderColors.danger;
+      case 'warning':
+        return theme.loader.loaderColors.warning;
+      case 'secondary':
+        return theme.loader.loaderColors.secondary;
+      case 'currentColor':
+        return 'currentColor';
+    }
+  }};
   stroke-linecap: round;
   @keyframes rotate {
     100% {

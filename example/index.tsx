@@ -10,8 +10,8 @@ import {theme} from '../src/theme/ThemeProvider'
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Button><Loader></Loader>Button</Button>
-      <Loader></Loader>
+      <Button><Loader size='m' color='currentColor'></Loader>Button</Button>
+      <Loader size='l' color='danger'></Loader>
     </ThemeProvider>
   );
 };

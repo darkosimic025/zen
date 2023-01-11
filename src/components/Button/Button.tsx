@@ -1,4 +1,5 @@
 import React, { forwardRef, ReactNode } from 'react';
+import { useDefaultProps } from '../../utils/Helpers';
 import Loader from '../Loader/Loader';
 import StyledButton from './Button.styled';
 
@@ -24,12 +25,7 @@ const defaultProps: Partial<ButtonProps> = {
   children: 'Button',
 };
 
-const useDefaultProps = <T, U extends Partial<T> = {}>(
-  defaultProps: U,
-  props: T
-) => {
-  return { ...defaultProps, ...props };
-};
+
 
 const buttonIsDisabled = ({
   disabled,
@@ -53,7 +49,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       color={buttonIsDisabled({ disabled, color })}
       size={size}
     >
-      {loading && <Loader/>}
+      {loading && <Loader />}
       {children}
     </StyledButton>
   );

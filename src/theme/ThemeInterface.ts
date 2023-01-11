@@ -23,6 +23,25 @@ declare module 'styled-components' {
         m: string;
         l: string;
       };
-    };
+    },
+    loader: {
+        loaderColors: {
+          primary: string;
+          secondary: string;
+          danger: string;
+          warning: string;
+          success: string;
+        };
+        loaderSizeWidth: {
+          s: string;
+          m: string;
+          l: string;
+        };
+        loaderSizeHeight: {
+          s: string;
+          m: string;
+          l: string;
+        };
+      };
   }
 }

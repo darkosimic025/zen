@@ -23,6 +23,25 @@ const theme: DefaultTheme = {
       l: '40px',
     },
   },
+  loader : {
+    loaderColors: {
+      primary: '#63B3ED',
+      secondary: 'RGBA(0, 0, 0, 0.16)',
+      danger: '#F56565',
+      warning: '#F6AD55',
+      success: '#68D391',
+    },
+    loaderSizeWidth: {
+      s: '16px',
+      m: '20px',
+      l: '25px',
+    },
+    loaderSizeHeight: {
+      s: '16px',
+      m: '20px',
+      l: '25px',
+    },
+  }
 };
 
 export { theme };
