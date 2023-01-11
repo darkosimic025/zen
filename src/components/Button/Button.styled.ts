@@ -39,8 +39,17 @@ const StyledButton = styled.button<StyledButtonProps>`
     }
   }};
   border: none;
+  outline: none;
   border-radius: 3px;
   cursor: pointer;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default StyledButton;
