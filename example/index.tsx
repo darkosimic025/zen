@@ -7,6 +7,8 @@ import Loader from '../src/components/Loader/Loader';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../src/theme/ThemeProvider';
 import { GlobalStyles } from '../src/theme/GlobalStyles';
+import Breadcrumbs from '../src/components/Breadcrumbs/Breadcrumbs'
+import BreadcrumbItem from '../src/components/Breadcrumbs/BreadcrumbItem';
 
 const App = () => {
   return (
@@ -15,6 +17,11 @@ const App = () => {
         <Loader size="m" color="currentColor"></Loader>Button
       </Button>
       <Loader size="l" color="danger"></Loader>
+      <Breadcrumbs type='navigaion'>
+        <BreadcrumbItem isClickable text="Workspace"/>
+        <BreadcrumbItem link='' text="Home"/>
+        <BreadcrumbItem text="Home"/>
+      </Breadcrumbs>
     </ThemeProvider>
   );
 };
