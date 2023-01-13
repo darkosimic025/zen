@@ -18,7 +18,7 @@ const App = () => {
       </Button>
       <Loader size="l" color="danger"></Loader>
       <Breadcrumbs type='navigaion'>
-        <BreadcrumbItem isClickable text="Workspace"/>
+        <BreadcrumbItem text="Workspace"/>
         <BreadcrumbItem link='' text="Home"/>
         <BreadcrumbItem text="Home"/>
       </Breadcrumbs>

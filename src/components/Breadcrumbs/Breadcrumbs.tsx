@@ -22,6 +22,7 @@ export interface BreadcrumbsProps {
 
 const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
   const { children, type = BreadcrumbsType.NAVIGATION } = props;
+  const lastIndex = Children.toArray(children).length;
   return (
     <nav>
       <BreadcrumbsStyled>
@@ -29,10 +30,10 @@ const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
           Children.map(children, (child, index) =>
             isValidElement(child)
               ? [
-                  index > 0 && '>',
                   cloneElement(child, {
                     ...child?.props,
-                    isClickable: type !== BreadcrumbsType.INDICATION,
+                    index: index,
+                    lastIndex: lastIndex,
                   }),
                 ]
               : null

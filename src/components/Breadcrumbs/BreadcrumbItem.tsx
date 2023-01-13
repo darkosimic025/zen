@@ -2,15 +2,15 @@ import React, { FC, useRef } from 'react';
 import { BreadcrumbContent } from './BreadcrumbContent';
 import { BreadcrumbItemStyled } from './Breadcrumbs.styled';
 
-export interface BreadcrumbItemProps {
-  isClickable?: boolean;
+export type BreadcrumbItemProps = {
   link?: string;
   onClick?: () => void;
   isDisabled?: boolean;
   text?: string;
-  isCurrent?: boolean;
   disabled?: boolean;
-}
+  index?: number;
+  lastIndex?: number;
+};
 
 export function backwardCompatibilityForProperties<T>(
   valuesArrayByMostUpdateNaming: Array<T> = [],
@@ -27,10 +27,10 @@ const BreadcrumbItem: FC<BreadcrumbItemProps> = (props) => {
     text = '',
     disabled,
     isDisabled,
-    isClickable,
     link,
     onClick,
-    isCurrent = false,
+    lastIndex,
+    index,
   } = props;
 
   const overrideDisabled = backwardCompatibilityForProperties(
@@ -40,13 +40,13 @@ const BreadcrumbItem: FC<BreadcrumbItemProps> = (props) => {
   const componentRef = useRef<HTMLSpanElement>(null);
 
   return (
-    <BreadcrumbItemStyled>
+    <BreadcrumbItemStyled >
       <BreadcrumbContent
+        index={index as number}
+        lastIndex={lastIndex }
         text={text}
         link={link}
-        isClickable={isClickable}
         ref={componentRef}
-        isCurrent={isCurrent}
         disabled={overrideDisabled}
         onClick={onClick}
       />

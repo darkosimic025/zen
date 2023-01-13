@@ -8,12 +8,12 @@ import React, {
 import { BreadcrumbContentStyled } from './Breadcrumbs.styled';
 
 export interface BreadcrumbContentProps {
-  isClickable?: boolean;
   link?: string;
   onClick?: () => void;
   text?: string;
-  isCurrent?: boolean;
   disabled?: boolean;
+  lastIndex?: number;
+  index?: number;
 }
 
 export const BreadcrumbContent: ForwardRefExoticComponent<
@@ -21,12 +21,12 @@ export const BreadcrumbContent: ForwardRefExoticComponent<
 > = forwardRef<HTMLSpanElement, BreadcrumbContentProps>(
   (props, ref: ForwardedRef<HTMLSpanElement>) => {
     const {
-      isClickable,
       link,
       onClick,
       text,
-      isCurrent,
       disabled = false,
+      lastIndex,
+      index,
     } = props;
 
     const tabIndex = useMemo(() => (disabled ? -1 : 0), [disabled]);
@@ -35,8 +35,8 @@ export const BreadcrumbContent: ForwardRefExoticComponent<
       return (
         <a href={link}>
           <BreadcrumbContentStyled
-            isCurrent={isCurrent}
-            isClickable={isClickable}
+            index={index}
+            lastIndex={lastIndex}
             ref={ref}
           >
             {text}
@@ -48,9 +48,9 @@ export const BreadcrumbContent: ForwardRefExoticComponent<
     return (
       <span tabIndex={tabIndex}>
         <BreadcrumbContentStyled
-          isCurrent={isCurrent}
+          index={index}
+          lastIndex={lastIndex}
           onClick={onClick}
-          isClickable={isClickable}
           ref={ref}
         >
           {text}
