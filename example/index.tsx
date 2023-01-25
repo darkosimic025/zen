@@ -11,17 +11,23 @@ import Breadcrumbs from '../src/components/Breadcrumbs/Breadcrumbs';
 import BreadcrumbItem from '../src/components/Breadcrumbs/BreadcrumbItem';
 import Avatar from '../src/components/Avatar/Avatar';
 import AvatarGroup from '../src/components/AvatarGroup/AvatarGroup';
+import Table from '../src/components/Table/Table';
+
 
 const App = () => {
+  const columns = [
+    { key: 'name', label: 'Name', render: (item : any) => item.name },
+    { key: 'age', label: 'Age', render: (item : any) => item.age },
+    { key: 'seniority', label: 'Seniority', render: (item : any) => item.seniority },
+    { key: 'job', label: 'Job', render: (item : any) => item.job },
+];
+  const items = [
+    { name: 'John Doe', age: 25, seniority: 'Senior', job: 'Frontend' },
+    { name: 'Jane Smith', age: 32, seniority: 'Junior', job: 'Backend' },
+  ];
   return (
     <ThemeProvider theme={theme}>
-      <AvatarGroup max={3}>
-        <Avatar initials='DS'  alt="user avatar" size="M" />
-        <Avatar initials='MS' alt="user avatar" size="M" />
-        <Avatar initials='DD' alt="user avatar" size="M" />
-        <Avatar initials='DD' alt="user avatar" size="M" />
-        <Avatar initials='DD' alt="user avatar" size="M" />
-      </AvatarGroup>
+      <Table items={items} columns={columns} />
     </ThemeProvider>
   );
 };
