@@ -7,21 +7,21 @@ import Loader from '../src/components/Loader/Loader';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../src/theme/ThemeProvider';
 import { GlobalStyles } from '../src/theme/GlobalStyles';
-import Breadcrumbs from '../src/components/Breadcrumbs/Breadcrumbs'
+import Breadcrumbs from '../src/components/Breadcrumbs/Breadcrumbs';
 import BreadcrumbItem from '../src/components/Breadcrumbs/BreadcrumbItem';
+import Avatar from '../src/components/Avatar/Avatar';
+import AvatarGroup from '../src/components/AvatarGroup/AvatarGroup';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Button>
-        <Loader size="m" color="currentColor"></Loader>Button
-      </Button>
-      <Loader size="l" color="danger"></Loader>
-      <Breadcrumbs type='navigaion'>
-        <BreadcrumbItem text="Workspace"/>
-        <BreadcrumbItem link='' text="Home"/>
-        <BreadcrumbItem text="Home"/>
-      </Breadcrumbs>
+      <AvatarGroup max={3}>
+        <Avatar initials='DS'  alt="user avatar" size="M" />
+        <Avatar initials='MS' alt="user avatar" size="M" />
+        <Avatar initials='DD' alt="user avatar" size="M" />
+        <Avatar initials='DD' alt="user avatar" size="M" />
+        <Avatar initials='DD' alt="user avatar" size="M" />
+      </AvatarGroup>
     </ThemeProvider>
   );
 };
@@ -31,7 +31,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <>
-    <App />
     <GlobalStyles />
+    <App />
   </>
 );

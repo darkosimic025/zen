@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Loader from './Loader';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../theme/ThemeProvider';
+import { GlobalStyles } from '../../theme/GlobalStyles';
 
 export default {
   title: 'Loader',
@@ -11,6 +12,7 @@ export default {
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
+        <GlobalStyles />
         <Story />
       </ThemeProvider>
     ),

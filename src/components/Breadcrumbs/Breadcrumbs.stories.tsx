@@ -8,6 +8,7 @@ import Breadcrumbs from './Breadcrumbs';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../theme/ThemeProvider';
 import BreadcrumbItem from './BreadcrumbItem';
+import { GlobalStyles } from '../../theme/GlobalStyles';
 
 export default {
   title: 'Breadcrumbs',
@@ -15,6 +16,7 @@ export default {
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
+         <GlobalStyles />
         <Story />
       </ThemeProvider>
     ),

@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { BreadcrumbContentProps } from './BreadcrumbContent';
-import { BreadcrumbItemProps } from './BreadcrumbItem';
-import { BreadcrumbContent } from './BreadcrumbContent';
 
 export type BreadcrumbContentStyledProps = Pick<
   BreadcrumbContentProps,
@@ -11,7 +9,7 @@ export type BreadcrumbContentStyledProps = Pick<
 export const BreadcrumbContentStyled = styled.span<BreadcrumbContentStyledProps>`
   text-align: center;
   vertical-align: baseline;
-  background-color: #6a99c0;
+  background-color: #4ca1e797;
   border-radius: 3px;
   text-align: center;
   padding: 8px 15px 8px 15px;
@@ -22,7 +20,8 @@ export const BreadcrumbContentStyled = styled.span<BreadcrumbContentStyledProps>
       lastIndex &&
       lastIndex - 1 == index &&
       `
-      background-color: #b2b2b9;
+      background-color: #5f5f687a;
+      cursor : default;
       {clip-path: polygon(
           0 0,
           100% 0,
@@ -55,9 +54,14 @@ export const BreadcrumbContentStyled = styled.span<BreadcrumbContentStyledProps>
   line-height: 16px;
 `;
 
-export const BreadcrumbItemStyled: any = styled.li`
+export const BreadcrumbItemStyled = styled.li`
   align-items: center;
   display: flex;
+  transition: 0.4s ease-in;
+  &:hover {
+    transform: translate(2px);
+    
+  }
 `;
 
 export const BreadcrumbsStyled = styled.ol`

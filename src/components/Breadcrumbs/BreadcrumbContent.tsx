@@ -20,14 +20,7 @@ export const BreadcrumbContent: ForwardRefExoticComponent<
   BreadcrumbContentProps & RefAttributes<HTMLSpanElement>
 > = forwardRef<HTMLSpanElement, BreadcrumbContentProps>(
   (props, ref: ForwardedRef<HTMLSpanElement>) => {
-    const {
-      link,
-      onClick,
-      text,
-      disabled = false,
-      lastIndex,
-      index,
-    } = props;
+    const { link, onClick, text, disabled = false, lastIndex, index } = props;
 
     const tabIndex = useMemo(() => (disabled ? -1 : 0), [disabled]);
 
